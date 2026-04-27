@@ -7,7 +7,8 @@ import BurgerIcon from "@/components/icons/burger";
 import {  Pacifico } from "next/font/google";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-
+import Container from "../Container/Container";
+import SocialMedia from "../SocialMedia/SocialMedia";
 
 const pacifico = Pacifico({
      subsets: ["latin"],
@@ -20,6 +21,8 @@ const Header = () => {
 const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
         <header className={css.header}>
+            <Container>
+                <div className={css.headerContainer}>
             <Link className={`${css.headerLogo} ${pacifico.className}`} href="/" aria-label="Home">
                 Tanyasha
             </Link>
@@ -55,19 +58,10 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
   }`} href="/">Contacts</Link>
                     </li>
                 </ul>
-                <ul className={css.socialMedia}>
-                    <li>
-                        <a className={css.headerSocial} href="https://www.instagram.com">
-                            <InstagramIcon/>
-                       </a>
-                    </li>
-                    <li>
-                        <a className={css.headerSocial} href="https://www.youtube.com">
-                            <YouTube/>
-                       </a>
-                    </li>
-                </ul>
-            </nav>
+               <SocialMedia/>
+                    </nav>
+                    </div>
+                </Container>
         </header>
     )
 }

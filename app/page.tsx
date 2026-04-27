@@ -1,11 +1,14 @@
 import styles from "./page.module.css";
+import Hero from "@/components/Hero/Hero";
+import Footer from "@/components/Footer/Footer";
+import SongSection from "@/components/SongSection/SongSection";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        
-      </main>
-    </div>
+    <>
+      <Hero />
+      <SongSection/>
+      <Footer/>
+      </>
   );
 }

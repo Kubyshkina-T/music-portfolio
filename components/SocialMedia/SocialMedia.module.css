@@ -1,0 +1,17 @@
+.socialMedia {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.linkSocial {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.linkSocial:hover {
+    color: #fa56ff;
+}
