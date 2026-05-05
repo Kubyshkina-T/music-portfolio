@@ -12,7 +12,7 @@ const Hero = () => {
             
             <p className={css.heroDescription}>I sing about feelings, life, and everything that inspires me. Thank you for listening!</p>
                 </div> 
-           <Link className={css.heroLink} href="/">About me ☆ </Link>
+           <Link className={css.heroLink} href="/about">About me ☆ </Link>
             </Container>
         </section>
             

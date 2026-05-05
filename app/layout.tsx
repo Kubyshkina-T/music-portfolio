@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Pacifico } from "next/font/google";
-import css from "@/app/globals.css";
+import "./globals.css";
 import Header from "@/components/Header/Header";
 import TanStackProvider from "@/providers/TanStackProvider";
 

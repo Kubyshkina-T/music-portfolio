@@ -1,0 +1,44 @@
+.sectionSongs{
+   position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.969), rgb(69, 6, 53));
+}
+.sectionSongs::before{
+position: absolute;
+content:"";
+top: 0;
+left: 0;
+width: 100%;
+height: 100px;
+background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+pointer-events: none;
+}
+.sectionSongsTitle{
+    margin:0 auto;
+    color: #d397d5;
+    padding-top: 72px;
+    padding-bottom:56px ;
+    font-size: 48;
+    text-align: center;
+}
+.loaderWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+.cardList {
+    display: flex;
+    flex-direction: column;
+gap: 36px;
+    align-items: center;
+    padding: 0;
+}
+@media screen and (min-width: 768px) {
+    .cardList{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+       
+    }
+    
+}

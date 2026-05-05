@@ -62,4 +62,9 @@ p {
   margin: 0;
 }
 
- 
+ .rhap_container .rhap_button-clear svg {
+   color: #e3dee8;
+ }
+.rhap_container .rhap_time {
+  color: #e3dee8;
+}
