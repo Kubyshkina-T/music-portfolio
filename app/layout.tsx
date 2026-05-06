@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Pacifico } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import TanStackProvider from "@/providers/TanStackProvider";
+import Footer from "@/components/Footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,7 +35,8 @@ export default function RootLayout({
       <body>
          <TanStackProvider>
         <Header />
-        <main>{children}</main>
+          <main>{children}</main>
+          <Footer/>
 </TanStackProvider>
       </body>
      

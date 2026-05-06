@@ -68,3 +68,6 @@ p {
 .rhap_container .rhap_time {
   color: #e3dee8;
 }
+.rhap_container {
+  max-width: 250px;
+}

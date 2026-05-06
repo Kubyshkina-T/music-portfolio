@@ -7,7 +7,7 @@
     background-position: top;
     min-height: 70vh;
     background-repeat: no-repeat;
-    max-width: 1024px;
+    /* max-width: 1024px; */
 }
 .heroContainer{
     display: flex;
@@ -71,32 +71,6 @@ font-style: italic;
 font-size: 16px;
 }
 
-.heroLink {
-    padding: 6px 12px;
-    font-size: 16px;
-    border-radius: 30px;
-    cursor: pointer;
-    color: white;
-    transition: all 0.3s ease;
-    display: block;
-    width: fit-content;
-    margin: 0 auto;
-    /* margin-bottom: 24px; */
-    text-decoration: none;
-    border: 1px solid transparent;
-    background-image:
-    linear-gradient(#000, #000),
-    linear-gradient(135deg,
-            #f3afff,
-            #7e019c);
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
-}
-.heroLink:hover {
-    background-image:
-        linear-gradient(135deg, #8a2be2, #1e0921),
-        linear-gradient(135deg, #8a2be2, #0d0410);
-}
 
 
 @media only screen and (min-width:768px) {

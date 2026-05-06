@@ -28,11 +28,13 @@ export default function SongSection() {
         <section className={css.sectionSongs}>
             <Container>
             <h2 className={css.sectionSongsTitle}>Music</h2>
-            <ul className={css.cardList}>
+           <div className={css.cardsWrapper}>
+                <ul className={css.cardList}>
                 {songs?.map((song) => (
                     <SongCard key={song.id} song={song} />
                 ))}
-            </ul>
+                    </ul>
+                    </div>
             </Container>
         </section>
             

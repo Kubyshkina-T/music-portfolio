@@ -1,6 +1,7 @@
 import css from "@/components/Hero/Hero.module.css";
 import Container from "../Container/Container";
 import Link from "next/link";
+import ButtonLink from "../Button/Button";
 const Hero = () => {
     return (
        
@@ -12,7 +13,7 @@ const Hero = () => {
             
             <p className={css.heroDescription}>I sing about feelings, life, and everything that inspires me. Thank you for listening!</p>
                 </div> 
-           <Link className={css.heroLink} href="/about">About me ☆ </Link>
+                <ButtonLink href="/about">About me ☆ </ButtonLink>
             </Container>
         </section>
             

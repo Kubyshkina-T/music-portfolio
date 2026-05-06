@@ -27,18 +27,46 @@ pointer-events: none;
     height: 200px;
 }
 .cardList {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
 gap: 36px;
     align-items: center;
-    padding: 0;
+    padding: 0; */
+    display: grid;
+    grid-template-columns: 1fr;
+        gap:40px;
 }
-@media screen and (min-width: 768px) {
+.cardsWrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* @media screen and (min-width: 768px) {
     .cardList{
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
        
     }
+}
+@media screen and (min-width:1024px){
+    .cardList{
+        justify-content: flex-start;
+    }
     
+} */
+
+@media screen and (min-width: 768px) {
+    .cardList {
+        grid-template-columns: repeat(2, 1fr);
+        
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    .cardList {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

@@ -10,19 +10,24 @@ list-style-type: none;
 }
 .cardTitle{
 color:#d397d5;
-font-size: 28px;
+font-size: 24px;
 max-width: 250px;
 margin-bottom: 12px;
+display: -webkit-box;
+-webkit-line-clamp: 1;
+-webkit-box-orient: vertical;
+    overflow: hidden;
+
 }
 .cardArtist {
 color: #d397d5;
-font-size: 18px;
+font-size: 16px;
 font-weight: 600;
 margin-bottom:8px;
 }
 .cardGenre{
 color: #d397d5;
-font-size: 18px;
+font-size: 16px;
 margin-bottom: 12px;
 }
 .rhap_volume-button{
