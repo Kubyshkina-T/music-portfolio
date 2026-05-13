@@ -42,7 +42,15 @@ export default function MusicPage() {
                                 song={song}
                                 isActive={currentSongIndex === index}
                                 onPlay={() => setCurrentSongIndex(index)}
-                                onNext={()=> setCurrentSongIndex(index+1) } />
+                                onPause={() => setCurrentSongIndex(null)}
+                                onNext={() => {
+                                    if (index < songs.length - 1) {
+                                        setCurrentSongIndex(index + 1);
+                                    } else {
+                                        setCurrentSongIndex(null);
+                                }
+                                }
+                                }/>
                         ))}
                     </ul>
                       </section>

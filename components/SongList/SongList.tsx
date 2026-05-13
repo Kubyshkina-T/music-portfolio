@@ -5,40 +5,34 @@ import { useEffect, useRef, useState } from "react";
 type Props = {
     song: Song;
     isActive: boolean;
-  onPlay: () => void;
+    onPlay: () => void;
+   onPause: () => void;
   onNext: () => void;
 };
 
-export default function SongList({ song, onNext, isActive, onPlay }: Props) {
+export default function SongList({ song, onNext, isActive, onPlay, onPause }: Props) {
     const audioRef = useRef<HTMLAudioElement | null>(null);
-    const [isPlaying, setIsPlaying] = useState(false);
+
 
     const togglePlay = () => {
-        if (!audioRef.current) return;
-        if (isPlaying) {
-            audioRef.current.pause();
-            setIsPlaying(false);
-        } else {
-            onPlay();
-            // audioRef.current.play();
-            // setIsPlaying(true);
-        }
-    };
+    if (isActive) {
+      onPause();
+    } else {
+      onPlay();
+    }
+  };
 
     useEffect(() => {
-  if (!audioRef.current) return;
+    const audio = audioRef.current;
+    if (!audio) return;
 
-  if (isActive && !isPlaying) {
-    audioRef.current.play();
-    setIsPlaying(true);
-  }
-
-  if (!isActive) {
-    audioRef.current.pause();
-    audioRef.current.currentTime = 0;
-    setIsPlaying(false);
-  }
-}, [isActive]);
+    if (isActive) {
+      void audio.play();
+    } else {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  }, [isActive]);
 
     return (
         <li className={css.musicList}>
@@ -47,7 +41,7 @@ export default function SongList({ song, onNext, isActive, onPlay }: Props) {
         onClick={togglePlay}
         className={css.playButton}
       >
-        {isPlaying ? "⏸" : "▶"}
+        {isActive? "⏸" : "▶"}
             </button>
             <div className={css.songInfo}>
                  <h3 className={css.songTitle}>{song.title}</h3>
