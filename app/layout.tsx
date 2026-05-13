@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     images:[
       {
       alt:"Website preview",
-      url: "/meta.jpg",
+      url: "../public/meta.jpg",
       width: 1200,
       height: 630,
     },
