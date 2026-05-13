@@ -45,7 +45,7 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
                     <li>
                         <Link className={`${css.headerNavigation} ${
     pathname === "/" ? css.active : ""
-  }`} href="/">My music</Link>
+  }`} href="/music">My music</Link>
                     </li>
                     <li>
                         <Link className={`${css.headerNavigation} ${

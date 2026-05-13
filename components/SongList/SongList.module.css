@@ -1,0 +1,47 @@
+.musicList{
+display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.songInfo{
+
+}
+
+.songTitle {
+    color: #d397d5;
+    font-size: 22px;
+    max-width: 200px;
+    margin-bottom: 6px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+@media only screen and (min-width:768px){
+    .songTitle {
+            max-width: 500px;
+           
+        }
+}
+
+.songArtist {
+    color: #f7d3f9;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.songGenre {
+    color: #d397d5;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.playButton {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}

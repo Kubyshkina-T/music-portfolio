@@ -8,10 +8,11 @@ import Container from "../Container/Container";
 import { ThreeDot } from "react-loading-indicators";
 
 export default function SongSection() {
-    const { data: songs, isLoading, error } = useQuery({
+    const { data, isLoading, error } = useQuery({
         queryKey: ["songs"],
-        queryFn: getSongs,
+        queryFn: ()=> getSongs(1),
     });
+    const songs = data?.songs ?? []
     console.log(songs);
     if (isLoading) return  <section className={css.sectionSongs}>
     <div className={css.loaderWrapper}>

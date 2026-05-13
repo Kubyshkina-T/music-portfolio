@@ -1,6 +1,7 @@
-import css from "@/app/about/about.module.css"
 import ButtonLink from "@/components/Button/Button";
+import css from "@/app/about/about.module.css"
 import Container from "@/components/Container/Container";
+
 
 export default function AboutPage() {
     return (
@@ -35,8 +36,8 @@ If you are looking for live music for pubs, small events, or cozy evenings — I
 <p className={css.descriptionAboutPage}>      
 Thank you for being here 🤍
                             </p>
-                            <ButtonLink href="mailto:tanyasha_@ukr.net">Send message 🕊️</ButtonLink>
-                            <ButtonLink href ="https://www.donationalerts.com/r/k_tanyasha">Support me 💸</ButtonLink>
+                            <ButtonLink className={css.btnMessage} href="mailto:tanyasha_@ukr.net">Send message 🕊️</ButtonLink>
+                            <ButtonLink className={css.btnSupport } href ="https://www.donationalerts.com/r/k_tanyasha">Support me 💸</ButtonLink>
                       </section>
                       </Container>
             </main>

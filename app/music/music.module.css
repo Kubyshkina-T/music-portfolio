@@ -1,0 +1,26 @@
+.musicPage{
+    background-image: linear-gradient(#000000f7, #450635);
+        min-height: 100vh;
+        position: relative;
+}
+/* .musicSection{
+
+} */
+ .titleMusicPage{
+    line-height: 1.5;
+        margin: 0;
+        margin-bottom: 16px;
+       text-align: center;
+        font-size: 28px;
+        color: #d364d7;
+        text-shadow:
+            0 0 10px #ba7fa2a3,
+            0 0 20px #f0cde19c,
+            0 0 30px #ffa1d875;
+ }
+.paginationWrapper{
+    position: absolute;
+        bottom: 30px;
+        left: 50%;
+            transform: translateX(-50%);
+}

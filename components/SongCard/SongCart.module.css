@@ -1,13 +1,32 @@
 
 .card{
 list-style-type: none;
-
+max-width: 250px;
 }
 .cardImage{
     display: block;
     max-width: 250px;
-
 }
+@media only screen and (min-width:1024px) {
+    .card{
+        max-width: 220px;
+    }
+        .cardImage {
+            display: block;
+            max-width: 220px;
+        }
+}
+@media only screen and (min-width:1440px) {
+    .card {
+        max-width: 250px;
+    }
+
+    .cardImage {
+        display: block;
+        max-width: 250px;
+    }
+}
+
 .cardTitle{
 color:#d397d5;
 font-size: 24px;
