@@ -23,6 +23,19 @@ const pacifico = Pacifico({
 export const metadata: Metadata = {
   title: "Music TaNyasha's World",
   description: "Welcome to Tanyasha's World - a space of music, emotions, and songs. Originals and covers.",
+  openGraph: {
+    title: "Music TaNyasha's World",
+   url:"https://music-portfolio-rose.vercel.app/",
+     description: "Welcome to Tanyasha's World - a space of music, emotions, and songs. Originals and covers.",
+    images:[
+      {
+      alt:"Website preview",
+      url: "/meta.jpg",
+      width: 1200,
+      height: 630,
+    },
+  ],
+  }
 };
 
 export default function RootLayout({
