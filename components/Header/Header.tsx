@@ -9,6 +9,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import Container from "../Container/Container";
 import SocialMedia from "../SocialMedia/SocialMedia";
+import BurgerMenu from "../BurgerMenu/BurgerMenu";
 
 const pacifico = Pacifico({
      subsets: ["latin"],
@@ -33,7 +34,10 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
        <BurgerIcon/>
-      </button>
+                    </button>
+                    {isMenuOpen && (
+  <BurgerMenu onClose={() => setIsMenuOpen(false)} />
+)}
 
             <nav aria-label="Main Navigation" className={css.navigationContainer}>
                 <ul className={css.navigation}>
@@ -55,7 +59,7 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
                     <li>
                         <Link className={`${css.headerNavigation} ${
     pathname === "/" ? css.active : ""
-  }`} href="/">Contacts</Link>
+  }`} href="/contacts">Contacts</Link>
                     </li>
                 </ul>
                <SocialMedia/>

@@ -1,0 +1,95 @@
+.menu {
+    position: fixed;
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(14px);
+
+    animation: menuFade 0.3s ease;
+}
+
+.link {
+    position: relative;
+
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    color: #fff;
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.link:hover {
+    color: #d397d5;
+    transform: scale(1.05);
+}
+
+.link::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+
+    width: 0%;
+    height: 2px;
+
+    background-color: #d397d5;
+
+    transition: width 0.3s ease;
+}
+
+.link:hover::after {
+    width: 100%;
+}
+
+.btnMenuClose {
+    position: absolute;
+
+    top: 24px;
+    right: 24px;
+
+    width: 48px;
+    height: 48px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: white;
+    font-size: 28px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.btnMenuClose:hover {
+    background: rgba(211, 151, 213, 0.25);
+    transform: rotate(90deg);
+}
+
+@keyframes menuFade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
