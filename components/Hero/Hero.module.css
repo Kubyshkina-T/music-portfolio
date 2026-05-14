@@ -49,12 +49,25 @@ color: #d364d7;
   position: absolute;
   left:0;
 bottom: 0;
-    width:100px;
+    width:120px;
     height: 2px;
     background: linear-gradient(90deg, transparent, #ff00cc, #9d00ff, transparent);
     box-shadow: 0 0 10px #ff00cc, 0 0 20px #9d00ff;
-  
+animation: glowPulse 2s infinite;
 }
+@keyframes glowPulse {
+        0% {
+            opacity: 0.5;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0.5;
+        }
+    }
 
 .heroSubtitle{
     display: inline-block;
@@ -111,3 +124,30 @@ font-size: 22px;
                     gap:170px;
                   margin-bottom:48px ;}
 }
+
+.btnAboutMe{
+   
+    animation: fadeSlide 1.5s ease forwards,
+     floating 3s ease-in-out infinite;
+}
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }}
+        @keyframes floating {
+    
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+    
+            50% {
+                transform: translateY(-5px);
+            }
+        }
