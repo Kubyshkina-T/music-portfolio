@@ -2,30 +2,44 @@
 
 import css from "@/app/music/music.module.css";
 import Container from "@/components/Container/Container";
-import { useQuery } from "@tanstack/react-query";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { getSongs } from "@/lib/songsApi";
 import { ThreeDot } from "react-loading-indicators";
 import SongList from "@/components/SongList/SongList";
 import { useState } from "react";
 import Pagination from "@/components/Pagination/Pagination";
-
+import { useDebouncedCallback } from "use-debounce";
+import SearchBox from "@/components/SearchBox/SearchBox";
 
 
 export default function MusicPage() {
+    const [searchQuery, setSearchQuery] = useState("");
     const [page, setPage] = useState(1);
+    const handleSearch = useDebouncedCallback((value: string) => {
+        setSearchQuery(value);
+        setPage(1);
+    }, 200);
+
     const { data, isLoading, error } = useQuery({
-        queryKey: ["songs", page],
-        queryFn: () => getSongs(page),
+        queryKey: ["songs", page, searchQuery],
+        queryFn: () => getSongs(page, searchQuery),
+        placeholderData: keepPreviousData,
+        refetchOnMount:false,
     });
     const songs = data?.songs ?? [];
     const totalPages = data?.totalPages ?? 0;
     const [currentSongIndex, setCurrentSongIndex] = useState<number | null>(null);
 
+
+    
+
+
     return(
  <main className={css.musicPage}>
                 <Container>
      <section className={css.musicSection}>
-      <h1 className={css.titleMusicPage}>Playlist</h1>
+                    <h1 className={css.titleMusicPage}>Playlist</h1>
+                    <SearchBox text ={searchQuery} onSearch={handleSearch}/>
      {isLoading && (
     <div className={css.loaderWrapper}>
         <ThreeDot

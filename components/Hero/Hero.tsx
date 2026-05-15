@@ -1,6 +1,5 @@
 import css from "@/components/Hero/Hero.module.css";
 import Container from "../Container/Container";
-import Link from "next/link";
 import ButtonLink from "../Button/Button";
 const Hero = () => {
     return (

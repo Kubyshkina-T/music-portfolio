@@ -1,8 +1,6 @@
 "use client";
 import css from "@/components/Header/Header.module.css";
 import Link from "next/link";
-import { InstagramIcon } from "@/components/icons/InstagramIcon";
-import { YouTube } from "@/components/icons/YouTube";
 import BurgerIcon from "@/components/icons/burger";
 import {  Pacifico } from "next/font/google";
 import { usePathname } from "next/navigation";

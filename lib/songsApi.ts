@@ -9,20 +9,9 @@ export type Song = {
     audio_url: string;
 };
 
-// export const getSongs = async (): Promise<Song[]> => {
-//     const { data, error } = await supabase
-//         .from("songs")
-//         .select("*")
-//         .order("id", { ascending: true });
-
-//     if (error) {
-//         throw new Error(error.message)
-//     }
-//     return data ?? [];
-// }
-
 export const getSongs = async (
-  page: number
+  page: number,
+  query: string
 ): Promise<{
   songs: Song[];
   totalPages: number;
@@ -31,12 +20,18 @@ export const getSongs = async (
   const from = (page - 1) * limit;
   const to = from + limit - 1;
 
-  const { data, count, error } = await supabase
+let request = supabase
     .from("songs")
     .select("*", { count: "exact" })
     .range(from, to)
     .order("id", { ascending: true });
-
+  
+  if (query.trim() !== "") {
+    request = request.or(
+    `title.ilike.%${query}%,genre.ilike.%${query}%`
+  );
+  }
+ const { data, count, error } = await request.range(from, to);
   if (error) {
     throw new Error(error.message);
   }

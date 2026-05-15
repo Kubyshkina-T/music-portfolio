@@ -8,9 +8,7 @@
     background-position: center top;
     min-height: 70vh;
     background-repeat: no-repeat;
-    /* background-size: clamp(900px, 80vw, 1400px); */
-    
-        background-color: #000;
+    background-color: #000;
     /* max-width: 1240px; */
 
 }

@@ -14,7 +14,7 @@ export default function SongSection() {
     
     const { data, isLoading, error } = useQuery({
         queryKey: ["songs"],
-        queryFn: ()=> getSongs(1),
+        queryFn: ()=> getSongs(1, ""),
     });
 
     const songs = data?.songs ?? [];

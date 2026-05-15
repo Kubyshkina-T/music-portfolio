@@ -36,19 +36,7 @@
 .footerLogo:hover {
     color: #ddd;
 }
-/* 
-.footerLogo::after {
-    content: "♪";
-    margin-left: 8px;
-    color: #fa56ff;
-
-    text-shadow:
-        0 0 10px #ba7fa2a3,
-        0 0 20px #f0cde19c,
-        0 0 30px #ffa1d875;
-} */
  .footerDescription{
-/* text-transform: uppercase; */
 display: none;
  }
  @media only screen and (min-width:768px){
