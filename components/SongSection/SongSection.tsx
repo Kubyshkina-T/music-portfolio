@@ -1,23 +1,23 @@
 "use client"
 
 import { useQuery } from "@tanstack/react-query";
-import { getSongs } from "@/lib/songsApi";
 import SongCard from "@/components/SongCard/SongCart";
 import css from "@/components/SongSection/SongSection.module.css"
 import Container from "../Container/Container";
 import { ThreeDot } from "react-loading-indicators";
 import { useState } from "react";
-
+import ButtonLink from "../Button/Button";
+import { getTopSongs } from "@/lib/songsApi";
 
 export default function SongSection() {
     const [currentSongId, setCurrentSongId] = useState<number | null>(null);
     
     const { data, isLoading, error } = useQuery({
         queryKey: ["songs"],
-        queryFn: ()=> getSongs(1, ""),
+        queryFn: ()=> getTopSongs(),
     });
 
-    const songs = data?.songs ?? [];
+    const songs = data ?? [];
   
     if (isLoading) return(
     <section className={css.sectionSongs}>
@@ -33,7 +33,7 @@ export default function SongSection() {
     return (
         <section className={css.sectionSongs}>
             <Container>
-            <h2 className={css.sectionSongsTitle}>Music</h2>
+            <h2 className={css.sectionSongsTitle}>Top Tracks</h2>
            <div className={css.cardsWrapper}>
                 <ul className={css.cardList}>
                 {songs?.map((song) => (
@@ -44,7 +44,8 @@ export default function SongSection() {
                 setCurrentSongId={setCurrentSongId}/>
                 ))}
                     </ul>
-                    </div>
+                </div>
+                <ButtonLink className={css.btnListenMore } href="/music">Listen More 🌸</ButtonLink>
             </Container>
         </section>
             

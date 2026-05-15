@@ -67,11 +67,19 @@ pointer-events: none;
     grid-template-columns: 1fr;
         gap:40px;
         justify-items: center;
-        padding-bottom: 16px;
+        padding-bottom: 76px;
 }
 .cardsWrapper {
     max-width: 1200px;
     margin: 0 auto;
+     position: relative;
+}
+
+.btnListenMore{
+ position: absolute;
+  bottom: 16px;
+  left: 50%;
+transform: translateX(-50%);
 }
 
 @media screen and (min-width: 768px) {

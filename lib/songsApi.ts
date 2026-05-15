@@ -6,7 +6,8 @@ export type Song = {
     artist: string;
     genre: string;
     covers_url: string;
-    audio_url: string;
+  audio_url: string;
+    plays_count: number;
 };
 
 export const getSongs = async (
@@ -40,4 +41,31 @@ let request = supabase
     songs: data ?? [],
     totalPages: Math.ceil((count ?? 0) / limit),
   };
+};
+
+export const addSongPlay = async (song: Song) => {
+  const { error } = await supabase
+    .from("songs")
+    .update({
+      plays_count: song.plays_count + 1,
+    })
+    .eq("id", song.id);
+  if (error) {
+    throw new Error(error.message);
+  }
+};
+
+
+export const getTopSongs = async () => {
+  const { data, error } = await supabase
+    .from("songs")
+    .select("*")
+    .order("plays_count", { ascending: false })
+    .limit(6);
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return data;
 };
