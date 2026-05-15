@@ -27,7 +27,7 @@ export const getSongs = async (
   songs: Song[];
   totalPages: number;
 }> => {
-  const limit = 5;
+  const limit = 6;
   const from = (page - 1) * limit;
   const to = from + limit - 1;
 
