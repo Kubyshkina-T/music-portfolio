@@ -16,10 +16,12 @@ type Props = {
 export default function SongCard({ song, currentSongId, setCurrentSongId }: Props) {
 
     const playerRef = useRef<AudioPlayer>(null);
-
+    
     useEffect(() => {
-        if (currentSongId !== song.id) {
-            playerRef.current?.audio.current?.pause();
+      const audio = playerRef.current?.audio.current;
+        if (currentSongId !== song.id && audio) {
+          audio.pause();
+          audio.currentTime = 0;
         }
     }, [currentSongId, song.id]);
 
@@ -35,10 +37,10 @@ export default function SongCard({ song, currentSongId, setCurrentSongId }: Prop
                 src={song.audio_url}
                 preload="metadata"
                 autoPlayAfterSrcChange={false}
-          onPlay={async () => {
-            setCurrentSongId(song.id);
-            await addSongPlay(song);
-          }}
+         onPlay={async () => {
+  setCurrentSongId(song.id);
+  await addSongPlay(song);
+}}
         onPause={() => {
           if (currentSongId === song.id) {
             setCurrentSongId(null);

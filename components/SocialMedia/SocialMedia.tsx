@@ -6,12 +6,12 @@ const SocialMedia = () => {
     return (
          <ul className={css.socialMedia}>
                     <li>
-                        <a className={css.linkSocial} href="https://www.instagram.com/k_tanyasha/">
+                        <a target="_blank" rel="noopener noreferrer"  className={css.linkSocial} href="https://www.instagram.com/k_tanyasha/" >
                             <InstagramIcon/>
                        </a>
                     </li>
                     <li>
-                        <a className={css.linkSocial} href="https://www.youtube.com/@TaNyasha_K">
+                        <a target="_blank" rel="noopener noreferrer" className={css.linkSocial} href="https://www.youtube.com/@TaNyasha_K">
                             <YouTube/>
                        </a>
                     </li>

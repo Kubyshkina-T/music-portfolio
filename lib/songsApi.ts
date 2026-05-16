@@ -43,18 +43,26 @@ let request = supabase
   };
 };
 
+
 export const addSongPlay = async (song: Song) => {
+  
   const { error } = await supabase
     .from("songs")
-    .update({
-      plays_count: song.plays_count + 1,
-    })
-    .eq("id", song.id);
+    .update(
+      {
+        plays_count: (song.plays_count ?? 0) + 1,
+      },
+      {
+        count: "exact",
+      }
+    )
+    .eq("id", song.id)
+    .select();
+
   if (error) {
     throw new Error(error.message);
   }
 };
-
 
 export const getTopSongs = async () => {
   const { data, error } = await supabase
