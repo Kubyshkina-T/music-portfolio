@@ -2,12 +2,8 @@
 background-image: linear-gradient(#000000f7, #450635);
     min-height: 100vh;
 }
-.contactsSection{
 
-}
  .contactsTitle {
-line-height: 1.5;
-    margin: 0;
     margin-bottom: 16px;
     text-align: center;
     font-size: 28px;
@@ -41,11 +37,11 @@ margin-bottom: 40px;
             color 0.3s ease,
             opacity 0.3s ease;
   }
-  .linkMail:hover{
+.linkMail:hover{
 color: #d364d7;
 transform: translateY(-3px);
   }
-  .contactsWrapper{
+.contactsWrapper{
     display: flex;
     flex-direction: column;
     gap: 45px;

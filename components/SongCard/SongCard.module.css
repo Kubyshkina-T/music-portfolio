@@ -2,7 +2,29 @@
 .card{
 list-style-type: none;
 max-width: 250px;
+padding: 8px 16px;
+border: 1px solid rgb(130, 33, 171);
+box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+border-radius: 8px;
+transition:
+        transform 250ms ease,
+        box-shadow 250ms ease,
+        border-color 250ms ease;
 }
+
+.card:hover,
+.card:focus,
+.card:active {
+transform: translateY(-6px);
+
+    border-color: rgba(211, 151, 213, 0.4);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.35),
+        0 0 20px rgba(211, 151, 213, 0.18);
+}
+
+
 .cardImage{
     display: block;
     max-width: 250px;

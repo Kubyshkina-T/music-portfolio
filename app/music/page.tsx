@@ -4,12 +4,15 @@ import css from "@/app/music/music.module.css";
 import Container from "@/components/Container/Container";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { getSongs } from "@/lib/songsApi";
+import type { Song } from "@/lib/songsApi";
 import { ThreeDot } from "react-loading-indicators";
 import SongList from "@/components/SongList/SongList";
 import { useState } from "react";
 import Pagination from "@/components/Pagination/Pagination";
 import { useDebouncedCallback } from "use-debounce";
 import SearchBox from "@/components/SearchBox/SearchBox";
+import AudioPlayer from "react-h5-audio-player";
+import "react-h5-audio-player/lib/styles.css";
 
 
 export default function MusicPage() {
@@ -28,10 +31,31 @@ export default function MusicPage() {
     });
     const songs = data?.songs ?? [];
     const totalPages = data?.totalPages ?? 0;
-    const [currentSongIndex, setCurrentSongIndex] = useState<number | null>(null);
+    const [currentSong, setCurrentSong] = useState<Song | null>(null);
 
+const handleNextSong = () => {
+  if (!currentSong) return;
 
-    
+  const currentIndex = songs.findIndex(
+    (song) => song.id === currentSong.id
+  );
+
+  if (currentIndex < songs.length - 1) {
+    setCurrentSong(songs[currentIndex + 1]);
+  }
+};
+
+const handlePrevSong = () => {
+  if (!currentSong) return;
+
+  const currentIndex = songs.findIndex(
+    (song) => song.id === currentSong.id
+  );
+
+  if (currentIndex > 0) {
+    setCurrentSong(songs[currentIndex - 1]);
+  }
+};
 
 
     return(
@@ -50,25 +74,33 @@ export default function MusicPage() {
                         </div>)}
                     {error && (<p>Error loading songs</p>)}
                     <ul className={css.musicList}>
-                        {songs?.map((song, index) => (
+                        {songs.map((song) => (
                             <SongList
                                 key={song.id}
                                 song={song}
-                                isActive={currentSongIndex === index}
-                                onPlay={() => setCurrentSongIndex(index)}
-                                onPause={() => setCurrentSongIndex(null)}
-                                onNext={() => {
-                                    if (index < songs.length - 1) {
-                                        setCurrentSongIndex(index + 1);
-                                    } else {
-                                        setCurrentSongIndex(null);
-                                }
-                                }
-                                }/>
+                                isActive={currentSong?.id === song.id}
+                                onPlay={() => setCurrentSong(song)}
+                            onPause={()=>setCurrentSong(null)}/>
                         ))}
                     </ul>
                       </section>
-                      </Container>
+            </Container>
+  <div className={css.globalPlayer}>
+    <div className={css.playerInfo}>
+      <p className={css.playerTitle}>  {currentSong?.title || ""}</p>
+      <p className={css.playerArtist}>  {currentSong?.artist || "Select a song to play"}</p>
+    </div>
+
+    <AudioPlayer
+      src={currentSong?.audio_url || ""}
+            autoPlay
+            showSkipControls
+            showJumpControls={false}
+             onClickNext={handleNextSong}
+  onClickPrevious={handlePrevSong}
+      onEnded={handleNextSong}
+    />
+  </div>
                 {totalPages > 1 && (
             <div className={css.paginationWrapper}>
           <Pagination

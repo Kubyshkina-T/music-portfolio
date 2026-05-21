@@ -1,55 +1,10 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html {
-  height: 100%;
-  background-color: #0a0a0a;
-}
-
-html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100%;
+  font-family: var(--font-roboto), sans-serif;
   display: flex;
   flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
+  min-height: 100vh;
   margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
-body {
-  margin: 0;
+  background-color: --font-geist-sans;
 }
 
 h1,
@@ -60,14 +15,18 @@ h5,
 h6,
 p {
   margin: 0;
+  padding-left: 0;
+  line-height: 1.5;
 }
 
- .rhap_container .rhap_button-clear svg {
-   color: #e3dee8;
- }
-.rhap_container .rhap_time {
-  color: #e3dee8;
+a {
+  cursor: pointer;
+  text-decoration: none;
 }
-.rhap_container {
-  max-width: 250px;
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
 }
+

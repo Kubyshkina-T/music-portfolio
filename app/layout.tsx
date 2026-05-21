@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Pacifico } from "next/font/google";
+import { Geist, Pacifico } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import TanStackProvider from "@/providers/TanStackProvider";
@@ -10,10 +10,6 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 const pacifico = Pacifico({
   variable: "--font-pacifico",
@@ -44,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${pacifico.variable}`}>
+    <html lang="en" className={`${geistSans.variable} ${pacifico.variable}`}>
       <body>
          <TanStackProvider>
         <Header />

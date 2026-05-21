@@ -13,7 +13,6 @@ background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 pointer-events: none;
 }
 .sectionSongsTitle{
-    margin:0 auto;
     color: #d397d5;
     padding-top: 72px;
     padding-bottom:56px ;
@@ -51,10 +50,6 @@ pointer-events: none;
         opacity: 1;
     }
 }
-
-
-
-
 
 .loaderWrapper {
     display: flex;
@@ -94,4 +89,22 @@ transform: translateX(-50%);
     .cardList {
         grid-template-columns: repeat(3, 1fr);
     }
+}
+
+/* Styles for player */
+.globalPlayer :global(.rhap_container .rhap_button-clear svg) {
+    color: #e3dee8;
+}
+
+.globalPlayer :global(.rhap_container .rhap_time) {
+    color: #e3dee8;
+}
+:global(.rhap_time) {
+    color: #e3dee8;
+}
+.globalPlayer :global(.rhap_container) {
+    width: 100%;
+    max-width: 100%;
+    background: transparent;
+    box-shadow: none;
 }

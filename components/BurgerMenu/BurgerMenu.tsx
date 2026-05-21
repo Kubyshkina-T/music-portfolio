@@ -3,17 +3,24 @@ import Link from "next/link"
 import css from "@/components/BurgerMenu/BurgerMenu.module.css";
 import SocialMedia from "../SocialMedia/SocialMedia";
 import Modal from "../Modal/Modal";
-
+import { usePathname } from "next/navigation";
 
 interface BurgerMenuProps{
     onClose: () => void;
 }
 export default function BurgerMenu({onClose}: BurgerMenuProps) {
-    return (
+   const pathname = usePathname();  
+  return (
         <Modal onClose={onClose}>
         <div className={css.menu}>
             <button className={css.btnMenuClose} type="button" onClick={onClose}>✕</button>
-      <Link href="/about" className={css.link} onClick={onClose} >
+          {pathname !== "/" && (
+            
+            <Link href="/" className={css.link} onClick={onClose} >
+       Home
+      </Link>
+      )}
+          <Link href="/about" className={css.link} onClick={onClose} >
         About Me
       </Link>
       <Link href="/music" className={css.link} onClick={onClose}>

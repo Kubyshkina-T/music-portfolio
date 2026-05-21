@@ -14,7 +14,7 @@ export default function SongSection() {
     
     const { data, isLoading, error } = useQuery({
         queryKey: ["songs"],
-        queryFn: ()=> getTopSongs(),
+        queryFn:getTopSongs,
     });
 
     const songs = data ?? [];
@@ -36,7 +36,7 @@ export default function SongSection() {
             <h2 className={css.sectionSongsTitle}>Top Tracks</h2>
            <div className={css.cardsWrapper}>
                 <ul className={css.cardList}>
-                {songs?.map((song) => (
+                {songs.map((song) => (
                     <SongCard
                         key={song.id}
                         song={song}

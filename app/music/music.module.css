@@ -1,14 +1,12 @@
 .musicPage{
     background-image: linear-gradient(#000000f7, #450635);
         min-height: 90vh;
+       /* min-height: 100vh; */
         position: relative;
+        /* padding-bottom: 80px; */
 }
-/* .musicSection{
 
-} */
  .titleMusicPage{
-    line-height: 1.5;
-        margin: 0;
         margin-bottom: 16px;
        text-align: center;
         font-size: 28px;
@@ -20,7 +18,40 @@
  }
 .paginationWrapper{
     position: absolute;
-        bottom: 30px;
-        left: 50%;
-            transform: translateX(-50%);
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.globalPlayer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    width: 100%;
+    padding: 12px 20px;
+    background: rgba(10, 10, 10, 0.96);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.playerInfo {
+    max-width: 900px;
+    margin: 0 auto 8px;
+}
+
+.playerTitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.playerArtist {
+    font-size: 14px;
+    color: #cfcfcf;
+}
+
+
+.globalPlayer :global(.rhap_container) {
+  background-color: #3c1652;
+    max-width: 100%;
 }

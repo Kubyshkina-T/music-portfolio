@@ -1,19 +1,14 @@
 import type { Song } from "@/lib/songsApi";
 import css from "@/components/SongList/SongList.module.css";
-import { useEffect, useRef, useState } from "react";
 
 type Props = {
     song: Song;
     isActive: boolean;
     onPlay: () => void;
    onPause: () => void;
-  onNext: () => void;
 };
 
-export default function SongList({ song, onNext, isActive, onPlay, onPause }: Props) {
-    const audioRef = useRef<HTMLAudioElement | null>(null);
-
-
+export default function SongList({ song, isActive, onPlay, onPause }: Props) {
     const togglePlay = () => {
     if (isActive) {
       onPause();
@@ -21,18 +16,6 @@ export default function SongList({ song, onNext, isActive, onPlay, onPause }: Pr
       onPlay();
     }
   };
-
-    useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    if (isActive) {
-      void audio.play();
-    } else {
-      audio.pause();
-      audio.currentTime = 0;
-    }
-  }, [isActive]);
 
     return (
         <li className={css.musicList}>
@@ -48,8 +31,6 @@ export default function SongList({ song, onNext, isActive, onPlay, onPause }: Pr
             <p className={css.songArtist}>{song.artist}</p>
             <p className={css.songGenre}>{song.genre}</p>
             </div>
-           
-            <audio ref={audioRef} src={song.audio_url}  onEnded={onNext}/>
         </li>
 
     )

@@ -18,8 +18,8 @@
 
 .headerContainer{
     display: flex;
-        justify-content: space-between;
-        align-items: center;
+    justify-content: space-between;
+    align-items: center;
 }
 .headerLogo{
 text-decoration: none;
@@ -124,8 +124,6 @@ display: block;
     background: transparent;
     border: none;
     color: white;
-    cursor: pointer;
-    color: #ffffff;
 }
 .burgerBtn:hover{
 color: #fa56ff;
