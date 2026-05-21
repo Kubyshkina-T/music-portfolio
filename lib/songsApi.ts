@@ -44,25 +44,15 @@ let request = supabase
 };
 
 
-export const addSongPlay = async (song: Song) => {
-  
-  const { error } = await supabase
-    .from("songs")
-    .update(
-      {
-        plays_count: (song.plays_count ?? 0) + 1,
-      },
-      {
-        count: "exact",
-      }
-    )
-    .eq("id", song.id)
-    .select();
+export async function addSongPlay(songId: number) {
+  const { error } = await supabase.rpc("increment_song_play", {
+    song_id: songId,
+  });
 
   if (error) {
-    throw new Error(error.message);
+    throw error;
   }
-};
+}
 
 export const getTopSongs = async () => {
   const { data, error } = await supabase

@@ -2,7 +2,7 @@ import type { Song } from "@/lib/songsApi";
 import Image from "next/image";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
-import css from "@/components/SongCard/SongCart.module.css";
+import css from "@/components/SongCard/SongCard.module.css";
 import { useEffect, useRef } from "react";
 import { addSongPlay } from "@/lib/songsApi";
 
@@ -38,8 +38,12 @@ export default function SongCard({ song, currentSongId, setCurrentSongId }: Prop
                 preload="metadata"
                 autoPlayAfterSrcChange={false}
          onPlay={async () => {
-  setCurrentSongId(song.id);
-  await addSongPlay(song);
+           setCurrentSongId(song.id);
+           try {
+             await addSongPlay(song.id);
+           } catch (error) {
+             console.log(error)
+           }  
 }}
         onPause={() => {
           if (currentSongId === song.id) {
