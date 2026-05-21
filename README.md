@@ -28,7 +28,7 @@ https://music-portfolio-rose.vercel.app/
 
 ## Screenshots
 
-![Preview] (./screenshots/README.md.gif)
+![Preview](./screenshots/README.md.gif)
 
 ## Installation
 
