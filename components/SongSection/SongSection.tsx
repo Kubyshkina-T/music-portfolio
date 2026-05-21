@@ -1,7 +1,7 @@
 "use client"
 
 import { useQuery } from "@tanstack/react-query";
-import SongCard from "@/components/SongCard/SongCart";
+import SongCard from "@/components/SongCard/SongCard";
 import css from "@/components/SongSection/SongSection.module.css"
 import Container from "../Container/Container";
 import { ThreeDot } from "react-loading-indicators";
