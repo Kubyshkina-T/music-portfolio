@@ -29,7 +29,7 @@ let request = supabase
   
   if (query.trim() !== "") {
     request = request.or(
-    `title.ilike.%${query}%,genre.ilike.%${query}%`
+    `title.ilike.%${query}%,genre.ilike.%${query}%, artist.ilike.%${query}%`
   );
   }
  const { data, count, error } = await request.range(from, to);

@@ -1,110 +1,102 @@
-.sectionSongs{
-   position: relative;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.969), rgb(69, 6, 53));
+.sectionSongs {
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.969), rgb(69, 6, 53));
 }
-.sectionSongs::before{
-position: absolute;
-content:"";
-top: 0;
-left: 0;
-width: 100%;
-height: 100px;
-background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-pointer-events: none;
+.sectionSongs::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  pointer-events: none;
 }
-.sectionSongsTitle{
-    color: #d397d5;
-    padding-top: 72px;
-    padding-bottom:56px ;
-    font-size: 48;
-    text-align: center;
-  
-    text-shadow:
-            0 0 5px #ff4fd8,
-            0 0 20px #ff4fd8,
-            0 0 40px #ff4fd8;
-    
-        animation: flicker 5.5s infinite;
-    }
+.sectionSongsTitle {
+  color: #d397d5;
+  padding-top: 72px;
+  padding-bottom: 56px;
+  font-size: 48;
+  text-align: center;
+  text-shadow:
+    0 0 5px #ff4fd8,
+    0 0 20px #ff4fd8,
+    0 0 40px #ff4fd8;
+
+  animation: flicker 5.5s infinite;
+}
 
 @keyframes flicker {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    20% {
-        opacity: 0.4;
-    }
-
-    40% {
-        opacity: 0.9;
-    }
-
-    60% {
-        opacity: 0.3;
-    }
-
-    80% {
-        opacity: 1;
-    }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0.4;
+  }
+  40% {
+    opacity: 0.9;
+  }
+  60% {
+    opacity: 0.3;
+  }
+  80% {
+    opacity: 1;
+  }
 }
 
 .loaderWrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
 }
 .cardList {
-    display: grid;
-    grid-template-columns: 1fr;
-        gap:40px;
-        justify-items: center;
-        padding-bottom: 76px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  justify-items: center;
+  padding-bottom: 76px;
 }
 .cardsWrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-     position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
 }
 
-.btnListenMore{
- position: absolute;
+.btnListenMore {
+  position: absolute;
   bottom: 16px;
   left: 50%;
-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 @media screen and (min-width: 768px) {
-    .cardList {
-        grid-template-columns: repeat(2, 1fr);
-        
-    }
+  .cardList {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-
 @media screen and (min-width: 1024px) {
-    .cardList {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  .cardList {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* Styles for player */
 .globalPlayer :global(.rhap_container .rhap_button-clear svg) {
-    color: #e3dee8;
+  color: #e3dee8;
 }
 
 .globalPlayer :global(.rhap_container .rhap_time) {
-    color: #e3dee8;
+  color: #e3dee8;
 }
 :global(.rhap_time) {
-    color: #e3dee8;
+  color: #e3dee8;
 }
 .globalPlayer :global(.rhap_container) {
-    width: 100%;
-    max-width: 100%;
-    background: transparent;
-    box-shadow: none;
+  width: 100%;
+  max-width: 100%;
+  background: transparent;
+  box-shadow: none;
 }

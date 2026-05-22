@@ -33,8 +33,7 @@ export default function SongSection() {
     return (
         <section className={css.sectionSongs}>
             <Container>
-            <h2 className={css.sectionSongsTitle}>Top Tracks</h2>
-           <div className={css.cardsWrapper}>
+                <h2 className={css.sectionSongsTitle}>Top Tracks</h2>
                 <ul className={css.cardList}>
                 {songs.map((song) => (
                     <SongCard
@@ -43,7 +42,9 @@ export default function SongSection() {
                      currentSongId={currentSongId}
                 setCurrentSongId={setCurrentSongId}/>
                 ))}
-                    </ul>
+                </ul>
+                <div className={css.cardsWrapper}>
+                   
                 </div>
                 <ButtonLink className={css.btnListenMore } href="/music">Listen More 🌸</ButtonLink>
             </Container>
