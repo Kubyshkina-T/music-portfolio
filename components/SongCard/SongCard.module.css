@@ -24,7 +24,24 @@ transform: translateY(-6px);
         0 0 20px rgba(211, 151, 213, 0.18);
 }
 
+.btnCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    width: 35px;
+    height: 35px;
+
+    background-color: #e796f4;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.playIcon {
+    line-height: 1;
+transform: translate(1px, 1px);
+}
 .cardImage{
     display: block;
     max-width: 250px;
@@ -71,9 +88,42 @@ color: #d397d5;
 font-size: 16px;
 margin-bottom: 12px;
 }
-.rhap_volume-button{
-    color: azure;
+
+.card :global(.rhap_container) {
+    background-color: #430a6eb7;
+    box-shadow: none;
+    border-radius: 0;
 }
-.rhap_main-controls-button{
-    color: azure;
+
+.card :global(.rhap_time) {
+    color: #ffffff;
+}
+
+.card :global(.rhap_main-controls-button),
+.card :global(.rhap_volume-button),
+.card :global(.rhap_repeat-button) {
+    color: #d397d5;
+}
+
+.card :global(.rhap_progress-filled),
+.card :global(.rhap_progress-indicator),
+.card :global(.rhap_volume-indicator) {
+    background-color: #d397d5;
+}
+
+.card :global(.rhap_progress-bar),
+.card :global(.rhap_volume-bar) {
+    background-color: #ffffff80;
+}
+.card :global(.rhap_container) {
+    padding: 12px;
+    background: linear-gradient(135deg, #3b005f, #5b0b70);
+    border-radius: 16px;
+    border: 1px solid #e796f4;
+    box-shadow: 0 0 18px rgba(231, 150, 244, 0.45);
+}
+
+.card :global(.rhap_main-controls-button) {
+    color: #f3b1ff;
+    filter: drop-shadow(0 0 6px #e796f4);
 }

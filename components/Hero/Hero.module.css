@@ -6,7 +6,7 @@
    
     background-size: cover;
     background-position: center top;
-    min-height: 70vh;
+    min-height: 40vh;
     background-repeat: no-repeat;
     background-color: #000;
 
@@ -20,14 +20,23 @@
 
 @media only screen and (min-width: 768px) {
     .hero {
-font-size: 36px;
-min-height: 90vh;
+min-height: 40vh;
     }
     .heroContainer {
     max-width: none;
         }
 } 
+@media only screen and (min-width: 1024px) {
+    .hero {
+        min-height: 50vh;
+    }
+}
 
+@media only screen and (min-width: 1440px) {
+    .hero {
+        min-height: 60vh;
+    }
+}
 .heroTitle{
 position: relative;
 max-width: 150px;

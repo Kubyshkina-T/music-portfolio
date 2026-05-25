@@ -1,3 +1,23 @@
+.container{
+  max-width: 320px;
+ margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1000px;
+  }
+}
+
+
+
 .sectionSongs {
   position: relative;
   background-image: linear-gradient(rgba(0, 0, 0, 0.969), rgb(69, 6, 53));

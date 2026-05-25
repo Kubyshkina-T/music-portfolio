@@ -1,7 +1,8 @@
 .musicPage{
     background-image: linear-gradient(#000000f7, #450635);
         /* min-height: 90vh; */
-       min-height: 100vh;
+       /* min-height: 80vh; */
+       padding-bottom: 80px;
        
 }
 .musicList {
@@ -20,14 +21,15 @@
             0 0 30px #ffa1d875;
  }
 .paginationWrapper{
-    position: absolute;
-   bottom:10px;
-    left: 50%;
-    transform: translateX(-50%);
+display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
 }
 
 .globalPlayer {
-    position: fixed;
+    position: sticky;
+    box-sizing: border-box;
     left: 0;
     bottom: 0;
     z-index: 1000;

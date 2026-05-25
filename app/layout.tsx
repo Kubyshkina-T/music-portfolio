@@ -10,28 +10,29 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-
 const pacifico = Pacifico({
   variable: "--font-pacifico",
-     subsets: ["latin"],
- weight: ["400"],
-   });
+  subsets: ["latin"],
+  weight: ["400"],
+});
 export const metadata: Metadata = {
   title: "Music TaNyasha's World",
-  description: "Welcome to Tanyasha's World - a space of music, emotions, and songs. Originals and covers.",
+  description:
+    "Welcome to Tanyasha's World - a space of music, emotions, and songs. Originals and covers.",
   openGraph: {
     title: "Music TaNyasha's World",
-   url:"https://music-portfolio-rose.vercel.app/",
-     description: "Welcome to Tanyasha's World - a space of music, emotions, and songs. Originals and covers.",
-    images:[
+    url: "https://music-portfolio-rose.vercel.app/",
+    description:
+      "Welcome to Tanyasha's World - a space of music, emotions, and songs. Originals and covers.",
+    images: [
       {
-      alt:"Website preview",
-      url: "/meta.jpg",
-      width: 1200,
-      height: 630,
-    },
-  ],
-  }
+        alt: "Website preview",
+        url: "/meta.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -42,15 +43,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${pacifico.variable}`}>
       <body>
-         <TanStackProvider>
-        <Header />
-          <main>{children}
-             <div id="modal-root" />
+        <TanStackProvider>
+          <Header />
+          <main>
+            {children}
+            <div id="modal-root" />
           </main>
-          <Footer/>
-</TanStackProvider>
+          <Footer />
+        </TanStackProvider>
       </body>
-     
     </html>
   );
 }
